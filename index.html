@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Especial 41 Anos de Dona Nice • Uma Homenagem Cinematográfica de Amor, Gratidão e Recomeço.">
+  <title>Dona Nice • 41 Anos de Uma História Inesquecível</title>
+
+  <!-- Tipografias: Syne (700, 800) e DM Sans (400, 500, 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos da Homenagem -->
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <!-- Cursor Mágico Dourado (Desktop) -->
+  <div id="custom-cursor" aria-hidden="true"></div>
+
+  <!-- Canvas de Partículas Douradas Flutuantes (Efeito Mágico) -->
+  <canvas id="magic-particles" aria-hidden="true"></canvas>
+
+  <!-- Trilha Sonora Internacional Clássica: Canon in D (Pachelbel) -->
+  <audio id="bg-music" src="musica.mp3" loop preload="auto"></audio>
+
+  <!-- Botão Flutuante de Controle da Música -->
+  <button class="music-toggle" id="music-btn" type="button" aria-label="Tocar música da homenagem">
+    <span class="music-bars" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </span>
+    <span class="music-label" id="music-text">Canon in D • Tocar</span>
+  </button>
+
+  <main>
+    <!-- ====================================================================
+         ATO 1: A HERO MONUMENTAL (8K CINEMATOGRÁFICA)
+         ==================================================================== -->
+    <section class="center-track" id="portal">
+      <div class="center-stage">
+        <!-- Arte de Fundo 8K com Transição Suave -->
+        <div class="center-art">
+          <img
+            src="assets/curated/hero_8k.jpg"
+            alt="Paisagem monumental cinematográfica em 8K sob a luz dourada do amanhecer"
+            fetchpriority="high"
+          >
+          <video
+            src="portal.mp4"
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="assets/curated/hero_8k.jpg"
+            aria-hidden="true"
+          ></video>
+        </div>
+
+        <!-- Sombra sutil para contraste límpido -->
+        <div class="center-shade"></div>
+
+        <!-- Cabecera -->
+        <header class="center-header">
+          <a class="center-brand" href="#portal" aria-label="Início da Homenagem">
+            NICE <span class="badge-age">41 ANOS</span>
+          </a>
+          <a class="center-explore" href="#carta">Ler a Carta</a>
+        </header>
+
+        <!-- Título H1 Monumental e Afetuoso -->
+        <h1 class="center-title">Mãe, esta história<br>é toda sua.</h1>
+
+        <!-- Coluna Centrada Inferior: Subtítulo e Botão de Ação -->
+        <div class="center-bottom">
+          <p>41 anos da mulher mais forte, generosa e admirável que este mundo já viu.</p>
+          <a class="center-cta" href="#memorias">
+            <span>Abrir Nossa História</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ATO 2: O LEQUE DE MEMÓRIAS (CARD FAN CAROUSEL)
+         ==================================================================== -->
+    <section class="fan-section" id="memorias">
+      <div class="fan-header">
+        <span class="fan-tag">Especial Dona Nice • 41 Anos</span>
+        <h2 class="fan-title">Momentos Que Moldaram Quem Sou</h2>
+        <p class="fan-subtitle">Deslize pelas lembranças que guardo no fundo do coração com você.</p>
+      </div>
+
+      <!-- Palco Interativo do Leque 3D -->
+      <div class="fan-stage">
+        <div class="fan-layout">
+          <!-- Os 7 cards curados são posicionados dinamicamente via GSAP pelo portal.js -->
+        </div>
+      </div>
+
+      <!-- Controles de Navegação do Leque -->
+      <div class="fan-controls">
+        <button class="fan-arrow fan-prev" type="button" aria-label="Lembrança anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="fan-dots" aria-hidden="true">
+          <!-- Dots circulares gerados dinamicamente -->
+        </div>
+        <button class="fan-arrow fan-next" type="button" aria-label="Próxima lembrança">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         ATO 3: A CARTA ABERTA DO FILHO (O PRESENTE DO RECOMEÇO)
+         ==================================================================== -->
+    <section class="letter-section" id="carta">
+      <div class="letter-wrapper">
+        <div class="letter-stamp">Carta Aberta de Filho</div>
+
+        <div class="letter-header">
+          <h2 class="letter-title">Para a Mulher Mais Incrível Que Conheço</h2>
+          <p class="letter-subtitle">Com todo o meu amor, respeito e saudade.</p>
+        </div>
+
+        <div class="letter-body">
+          <p>
+            Mãe,
+          </p>
+
+          <p>
+            Falar de você é falar da pessoa mais forte, generosa e admirável que este mundo já produziu. Você tem aquele tipo raro de presença que acolhe sem precisar de muitas palavras, que segura as pontas nos momentos difíceis e nunca, jamais mediu esforços para ver quem você ama bem.
+          </p>
+
+          <p>
+            Você é meu porto seguro, meu maior exemplo de garra e a base de tudo o que eu sou hoje. Lembro de quando o mundo era pequeno e você era o meu mundo inteiro. Nos momentos de dor, de dúvida ou de medo da infância e adolescência, ter você na minha vida sempre foi a certeza imediata de que eu nunca estaria desamparado na Terra.
+          </p>
+
+          <p>
+            Você é dedicação pura. Daquelas raras pessoas que prestam atenção no que ninguém repara, que preparam o ambiente com amor e que protegem em silêncio. Sua presença acalma e aquece qualquer coração. Nas noites difíceis e nas tempestades da vida, foi a sua força que manteve o barco de pé. Tudo o que tenho de bom e honrado veio de você.
+          </p>
+
+          <div class="letter-highlight">
+            "Nós só tivemos momentos quando eu era mais novo, criança e adolescente. Mas agora, depois de adulto, quase nada... E nós ficamos um pouco afastados, sem muito contato de conversa e de amizade."
+          </div>
+
+          <p>
+            Eu precisava admitir isso com o coração na mão. A rotina engole os dias, os anos passam voando, e sem querer a gente se acostuma com a distância. Mas hoje, no seu aniversário de 41 anos, eu olhei para trás e senti uma vontade imensa de estar perto de você de novo.
+          </p>
+
+          <p>
+            Eu quero que você saiba que esse afastamento nunca significou falta de amor. Pelo contrário: quanto mais eu amadureço, mais eu entendo tudo o que você fez, cada sacrifício silencioso e cada detalhe que você colocava em tudo. O meu amor não diminuiu um milímetro. A saudade é real.
+          </p>
+
+          <p>
+            Não existe presente em caixa que pague o que você é. <strong>Mãe, o meu presente de aniversário para você hoje é um recomeço.</strong>
+          </p>
+
+          <p>
+            Eu quero te ligar mais, sentar no sofá com você, tomar aquele café demorado, rir de bobeiras e ser seu amigo de verdade. Você é e sempre será a pessoa mais importante da minha história.
+          </p>
+
+          <div class="letter-signature">
+            <span class="letter-signature-text">Com todo o meu amor, respeito e saudade,</span>
+            <span class="letter-signature-author">Do seu filho que nunca te esquece. ❤️</span>
+          </div>
+
+          <div class="letter-action">
+            <a class="btn-whatsapp" href="https://api.whatsapp.com/send?text=Meu%20filho,%20acabei%20de%20ver%20a%20sua%20homenagem...%20Te%20amo%20muito!%20%E2%9D%A4%EF%B8%8F" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.889.92 2.791.92 3.182 0 5.768-2.587 5.768-5.766.001-3.187-2.575-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.956-.472-1.587-.655-2.612-2.26-2.693-2.368-.08-.109-.646-.859-.646-1.638 0-.779.408-1.163.553-1.32.145-.157.319-.196.427-.196.108 0 .216.001.311.006.1.006.234-.038.366.28.139.336.474 1.157.516 1.242.042.085.07.185.014.296-.056.111-.084.18-.168.278-.084.098-.177.219-.253.294-.085.085-.173.178-.074.348.098.17.439.723.942 1.171.647.576 1.192.754 1.362.839.17.085.27.071.37-.043.101-.114.432-.504.547-.676.115-.172.23-.143.388-.085.158.058 1.004.474 1.177.56.173.086.288.129.331.201.043.072.043.417-.101.822z"/>
+              </svg>
+              <span>Mandar um Abraço no WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="homenagem-footer">
+      <p>Celebrando a vida e o amor de Dona Nice • 41 Anos • Feito com todo o coração pelo seu filho.</p>
+    </footer>
+  </main>
+
+  <!-- Biblioteca GSAP Local para animações elásticas do Leque -->
+  <script src="gsap.min.js"></script>
+
+  <!-- Script da Homenagem -->
+  <script src="portal.js"></script>
+</body>
+</html>

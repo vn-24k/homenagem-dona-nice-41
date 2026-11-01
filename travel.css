@@ -1,0 +1,417 @@
+/* ==========================================================================
+   TRAV — Hero de Viajes Cinematográfica
+   Tipografía: Inter, sans-serif
+   ========================================================================== */
+
+:root {
+  --trav-white: #ffffff;
+  --trav-text-muted: rgba(255, 255, 255, 0.82);
+  --trav-overlay: rgba(10, 14, 22, 0.42);
+  --trav-overlay-gradient: linear-gradient(
+    180deg,
+    rgba(7, 10, 16, 0.6) 0%,
+    rgba(7, 10, 16, 0.25) 40%,
+    rgba(7, 10, 16, 0.65) 100%
+  );
+  --trav-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --trav-focus: #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #070a10;
+  color: var(--trav-white);
+  font-family: var(--trav-font);
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Contenedor Principal de la Hero de Viajes
+   ========================================================================== */
+
+.trav-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #070a10;
+}
+
+/* Video de Fondo a Pantalla Completa */
+.trav-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.trav-media img,
+.trav-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.trav-media video {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.trav-hero.has-video .trav-media video {
+  opacity: 1;
+}
+
+.trav-hero.has-video .trav-media img {
+  opacity: 0;
+}
+
+/* Capa oscura suave */
+.trav-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--trav-overlay-gradient);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Cabecera: Marca Trav y Enlaces
+   ========================================================================== */
+
+.trav-header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 32px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trav-brand {
+  font-family: var(--trav-font);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--trav-white);
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.trav-brand:hover {
+  opacity: 0.85;
+}
+
+/* Navegación Desktop */
+.trav-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.trav-nav-link {
+  font-family: var(--trav-font);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--trav-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 6px 0;
+}
+
+.trav-nav-link:hover {
+  color: var(--trav-white);
+}
+
+/* Botón Hamburguesa Móvil (oculto en desktop) */
+.trav-menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--trav-white);
+  font-family: var(--trav-font);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.trav-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.trav-menu-icon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 12px;
+}
+
+.trav-menu-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* ==========================================================================
+   Contenido Central: Título, Subtítulo y Botón Descargar
+   ========================================================================== */
+
+.trav-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Entradas suaves del texto */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: travFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.32s;
+}
+
+.delay-3 {
+  animation-delay: 0.48s;
+}
+
+@keyframes travFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título: 60px desktop, 40px móvil, peso 600, interlineado 1.1 */
+.trav-title {
+  font-family: var(--trav-font);
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--trav-white);
+  margin: 0 0 20px 0;
+  text-wrap: balance;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+.trav-subtitle {
+  font-family: var(--trav-font);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--trav-text-muted);
+  max-width: 660px;
+  margin: 0 0 36px 0;
+  text-wrap: balance;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón Descargar */
+.trav-btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--trav-white);
+  color: #070a10;
+  font-family: var(--trav-font);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 18px 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+@media (hover: hover) {
+  .trav-btn-download:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.trav-btn-download:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Espaciador inferior para equilibrar la composición vertical */
+.trav-footer-spacer {
+  position: relative;
+  z-index: 5;
+  padding: 24px;
+}
+
+/* Foco visible y accesible */
+.trav-brand:focus-visible,
+.trav-nav-link:focus-visible,
+.trav-menu-toggle:focus-visible,
+.trav-btn-download:focus-visible {
+  outline: 3px solid var(--trav-focus);
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   Responsive: Móvil y Pantallas Pequeñas
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .trav-header {
+    padding: 24px 20px;
+  }
+
+  .trav-menu-toggle {
+    display: inline-flex;
+  }
+
+  /* Menú Accesible Móvil */
+  .trav-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    right: 20px;
+    background: rgba(10, 14, 22, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+  }
+
+  .trav-nav.is-open {
+    display: flex;
+    animation: travMenuOpen 0.25s ease forwards;
+  }
+
+  @keyframes travMenuOpen {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .trav-nav-link {
+    font-size: 16px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .trav-nav-link:hover,
+  .trav-nav-link:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Título 40px en móvil */
+  .trav-title {
+    font-size: 40px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .trav-subtitle {
+    font-size: 17px;
+    line-height: 1.45;
+    margin-bottom: 30px;
+    padding: 0 8px;
+  }
+
+  .trav-content {
+    padding: 40px 16px;
+    margin: auto 0;
+  }
+
+  .trav-btn-download {
+    width: 100%;
+    max-width: 260px;
+    padding: 17px 28px;
+  }
+}
+
+/* ==========================================================================
+   Accesibilidad: Prefers Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .trav-media video {
+    display: none !important;
+  }
+
+  .trav-media img {
+    opacity: 1 !important;
+  }
+
+  .animate-fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .trav-btn-download {
+    transition: none !important;
+  }
+
+  .trav-btn-download:hover {
+    transform: none !important;
+  }
+
+  .trav-nav.is-open {
+    animation: none !important;
+  }
+}

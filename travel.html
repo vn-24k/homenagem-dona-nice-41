@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trav — Tu próxima historia empieza lejos. Encuentra lugares que no salen en las guías.">
+  <title>Trav — Tu próxima historia empieza lejos</title>
+
+  <!-- Tipografía: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+
+  <!-- Estilos de la hero de viajes -->
+  <link rel="stylesheet" href="travel.css">
+</head>
+<body>
+  <main>
+    <!-- Única hero de viajes Trav a pantalla completa -->
+    <section class="trav-hero" id="hero-trav">
+      <!-- Video de fondo a pantalla completa y fotograma estático -->
+      <div class="trav-media">
+        <img
+          src="trav-poster.jpg"
+          alt="Anillo dorado monumental sobre el agua reflejando una ciudad en el horizonte"
+          fetchpriority="high"
+        >
+        <video
+          src="travel.mp4"
+          poster="trav-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          aria-hidden="true"
+        ></video>
+      </div>
+
+      <!-- Capa oscura suave -->
+      <div class="trav-overlay"></div>
+
+      <!-- Cabecera: Marca Trav arriba a la izquierda; enlaces arriba a la derecha -->
+      <header class="trav-header">
+        <a class="trav-brand" href="#hero-trav" aria-label="Trav Inicio">Trav</a>
+
+        <!-- Botón menú para móvil accesible -->
+        <button
+          class="trav-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="trav-menu"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="trav-menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span>Menú</span>
+        </button>
+
+        <!-- Navegación -->
+        <nav class="trav-nav" id="trav-menu" aria-label="Navegación principal">
+          <a class="trav-nav-link" href="index.html" title="Regresar al Portal">Inicio</a>
+          <a class="trav-nav-link" href="#historia">Nuestra historia</a>
+          <a class="trav-nav-link" href="#preguntas">Preguntas</a>
+          <a class="trav-nav-link" href="#politicas">Políticas</a>
+        </nav>
+      </header>
+
+      <!-- Contenido central: Título, subtítulo y botón Descargar -->
+      <div class="trav-content">
+        <h1 class="trav-title animate-fade-up delay-1">Tu próxima historia empieza lejos</h1>
+        <p class="trav-subtitle animate-fade-up delay-2">
+          Encuentra lugares que no salen en las guías y organiza ese viaje que llevas tiempo imaginando.
+        </p>
+        <div class="animate-fade-up delay-3">
+          <button class="trav-btn-download" type="button">Descargar</button>
+        </div>
+      </div>
+
+      <!-- Espaciador inferior para equilibrio visual -->
+      <div class="trav-footer-spacer" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <!-- Script interactivo de Trav -->
+  <script src="travel.js"></script>
+</body>
+</html>
